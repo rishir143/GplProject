@@ -35,16 +35,16 @@ const Prizes: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black mb-6 tracking-tighter"
+            className="text-4xl md:text-6xl font-black mb-6 tracking-[0.05em] font-orbitron uppercase text-pop"
           >
-            Prize <span className="text-hacker-cyan text-glow">Pool</span>
+            Prize <span className="text-hacker-cyan text-glow-neon">Pool</span>
           </Motion.h2>
           <Motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-white/50 max-w-2xl mx-auto text-lg"
+            className="text-white/50 max-w-2xl mx-auto text-lg font-space"
           >
             Total rewards exceeding ₹ 50,000+ for the top performers of GPL 1.0.
           </Motion.p>
@@ -63,19 +63,19 @@ const Prizes: React.FC = () => {
               <div className="mb-8 p-4 rounded-2xl bg-hacker-cyan/10 text-hacker-cyan group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_rgba(0,194,255,0.1)] group-hover:shadow-[0_0_30px_rgba(0,194,255,0.3)]">
                 {prize.icon}
               </div>
-              <h3 className="text-xl font-bold text-white/70 mb-2 uppercase tracking-widest">{prize.place}</h3>
-              <p className="text-4xl font-black text-white text-glow mb-8">{prize.amount}</p>
+              <h3 className="text-xl font-bold text-white/70 mb-2 uppercase tracking-[0.2em] font-orbitron">{prize.place}</h3>
+              <p className="text-4xl font-black text-white text-glow mb-8 font-orbitron">{prize.amount}</p>
               <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-hacker-cyan/20 to-transparent mb-8" />
-              <ul className="text-sm text-white/40 space-y-4 font-mono text-left w-full">
-                <li className="flex items-center gap-3">
+              <ul className="text-sm text-white/40 space-y-4 font-space text-left w-full">
+                <li className="flex items-center gap-3 uppercase tracking-widest font-bold">
                   <span className="w-1.5 h-1.5 rounded-full bg-hacker-cyan shadow-[0_0_8px_rgba(0,194,255,0.8)]" />
                   Exclusive SWAGs
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center gap-3 uppercase tracking-widest font-bold">
                   <span className="w-1.5 h-1.5 rounded-full bg-hacker-cyan shadow-[0_0_8px_rgba(0,194,255,0.8)]" />
                   Merit Certificates
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center gap-3 uppercase tracking-widest font-bold">
                   <span className="w-1.5 h-1.5 rounded-full bg-hacker-cyan shadow-[0_0_8px_rgba(0,194,255,0.8)]" />
                   Internship Opportunities
                 </li>

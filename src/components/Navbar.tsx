@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
           <div className="p-2 rounded-xl bg-hacker-cyan/10 border border-hacker-cyan/20 group-hover:bg-hacker-cyan/20 transition-all duration-300">
             <img src={logo} alt="LOOP Logo" className="h-8 w-8 object-contain" />
           </div>
-          <span className="text-2xl font-black tracking-tighter text-white">
+          <span className="text-2xl font-black tracking-tighter text-white font-orbitron">
             GPL <span className="text-hacker-cyan text-glow">1.0</span>
           </span>
         </div>
@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-bold uppercase tracking-widest text-white/50 hover:text-hacker-cyan transition-all duration-300 relative group"
+              className="text-sm font-bold uppercase tracking-[0.2em] text-white/50 hover:text-hacker-cyan transition-all duration-300 relative group font-orbitron"
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-hacker-cyan transition-all duration-300 group-hover:w-full" />
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
             href="https://unstop.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 bg-hacker-cyan text-black text-xs font-black uppercase tracking-widest rounded-xl btn-glow hover:scale-105 active:scale-95 transition-all"
+            className="px-8 py-3 bg-hacker-cyan text-black text-xs font-black uppercase tracking-[0.2em] rounded-xl btn-glow hover:scale-105 active:scale-95 transition-all font-orbitron"
           >
             Register Now
           </a>

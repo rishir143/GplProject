@@ -19,7 +19,7 @@ const About: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black mb-8 tracking-tighter"
+            className="text-4xl md:text-6xl font-black mb-8 tracking-[0.05em] font-orbitron uppercase text-pop"
           >
             The Ultimate <span className="text-gradient">Battleground</span>
           </Motion.h2>
@@ -28,7 +28,7 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-white/60 leading-relaxed"
+            className="text-xl text-white/60 leading-relaxed font-space"
           >
             The Galgotias Programming League is more than just a contest; it's a battleground for the sharpest minds. 
             Join hundreds of developers in a high-octane environment where logic meets creativity. 
@@ -54,8 +54,8 @@ const About: React.FC = () => {
               <div className="w-14 h-14 bg-hacker-cyan/10 rounded-2xl flex items-center justify-center text-hacker-cyan mb-8 border border-hacker-cyan/20 group-hover:bg-hacker-cyan group-hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(0,194,255,0.1)] group-hover:shadow-[0_0_30px_rgba(0,194,255,0.3)]">
                 {item.icon}
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-hacker-cyan transition-colors">{item.title}</h3>
-              <p className="text-white/40 leading-relaxed text-sm">{item.desc}</p>
+              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-hacker-cyan transition-colors font-orbitron uppercase tracking-wider">{item.title}</h3>
+              <p className="text-white/40 leading-relaxed text-sm font-space">{item.desc}</p>
             </Motion.div>
           ))}
         </div>

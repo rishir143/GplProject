@@ -25,19 +25,22 @@ const Hero: React.FC = () => {
             Registrations Open • 1 Apr - 3 Apr
           </Motion.div>
 
-          <h1 className="text-7xl md:text-[10rem] font-black mb-6 leading-[0.9] tracking-tighter text-white">
-            GPL <span className="text-hacker-cyan text-glow drop-shadow-[0_0_30px_rgba(0,194,255,0.3)]">1.0</span>
-          </h1>
+          <div className="relative mb-6">
+            <div className="absolute inset-0 bg-black/40 blur-[80px] rounded-full -z-10" />
+            <h1 className="text-7xl md:text-[10rem] font-black leading-[0.9] tracking-[-0.02em] text-white font-orbitron text-pop">
+              GPL <span className="text-gradient-cyan text-glow-neon">1.0</span>
+            </h1>
+          </div>
           
           <Motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 1 }}
           >
-            <p className="text-2xl md:text-4xl font-bold text-white/90 mb-4 tracking-tight">
+            <p className="text-2xl md:text-4xl font-bold text-white mb-4 tracking-[0.05em] font-orbitron uppercase text-pop">
               Galgotias Programming League
             </p>
-            <p className="text-lg md:text-2xl text-hacker-cyan/80 font-mono mb-16 tracking-[0.3em] uppercase">
+            <p className="text-lg md:text-2xl text-hacker-cyan font-orbitron mb-16 tracking-[0.5em] uppercase font-black text-pop">
               "Compete. Code. Conquer."
             </p>
           </Motion.div>

@@ -3,6 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        orbitron: ["Orbitron", "sans-serif"],
+        space: ["Space Grotesk", "sans-serif"],
+      },
       colors: {
         hacker: {
           green: "#00FF41",
@@ -23,7 +27,8 @@ export default {
         },
       },
       backgroundImage: {
-        "deep-gradient": "linear-gradient(to bottom, #0d2434, #0F283B, #08141f)",
+        "deep-gradient":
+          "linear-gradient(to bottom, #0d2434, #0F283B, #08141f)",
         "glass-gradient":
           "linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02))",
       },

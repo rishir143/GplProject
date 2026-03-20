@@ -14,12 +14,14 @@ body {
   background-color: #08141f;
   color: #ffffff;
   font-family:
-    "Inter",
+    "Space Grotesk",
     system-ui,
     -apple-system,
     sans-serif;
   margin: 0;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .glass-card {
@@ -38,10 +40,21 @@ body {
   box-shadow: 0 10px 30px -10px rgba(0, 194, 255, 0.2);
 }
 
-.text-glow {
+.text-glow-neon {
   text-shadow:
-    0 0 10px rgba(0, 194, 255, 0.5),
-    0 0 20px rgba(0, 194, 255, 0.2);
+    0 0 5px rgba(0, 194, 255, 0.8),
+    0 0 10px rgba(0, 194, 255, 0.4);
+}
+
+.text-pop {
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #00c2ff 0%, #0082ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .text-gradient {

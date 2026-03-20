@@ -43,10 +43,10 @@ const Timeline: React.FC = () => {
           >
             <Clock className="w-6 h-6 text-hacker-cyan" />
           </Motion.div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white">
+          <h2 className="text-4xl md:text-6xl font-black tracking-[0.05em] text-white font-orbitron uppercase text-pop">
             Event <span className="text-gradient">Timeline</span>
           </h2>
-          <p className="text-white/40 mt-4 text-lg max-w-2xl">
+          <p className="text-white/40 mt-4 text-lg max-w-2xl font-space">
             Mark your calendar. The road to victory is paved with these key milestones.
           </p>
         </div>
@@ -69,9 +69,9 @@ const Timeline: React.FC = () => {
               
               <div className={`ml-10 md:ml-0 w-full md:w-1/2 ${idx % 2 === 0 ? 'md:pr-20 md:text-right' : 'md:pl-20 md:ml-auto'}`}>
                 <div className="glass-card p-8 group-hover:border-hacker-cyan/30 transition-all">
-                  <span className="text-hacker-cyan font-mono text-sm font-bold uppercase tracking-widest mb-3 block">{event.date}</span>
-                  <h3 className="text-2xl font-black mb-3 text-white group-hover:text-hacker-cyan transition-colors">{event.title}</h3>
-                  <p className="text-white/40 text-sm leading-relaxed">{event.desc}</p>
+                  <span className="text-hacker-cyan font-orbitron text-sm font-bold uppercase tracking-[0.2em] mb-3 block">{event.date}</span>
+                  <h3 className="text-2xl font-black mb-3 text-white group-hover:text-hacker-cyan transition-colors font-orbitron uppercase tracking-wider">{event.title}</h3>
+                  <p className="text-white/40 text-sm leading-relaxed font-space">{event.desc}</p>
                 </div>
               </div>
             </Motion.div>

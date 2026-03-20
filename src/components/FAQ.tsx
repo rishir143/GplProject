@@ -39,10 +39,10 @@ const FAQ: React.FC = () => {
           <div className="p-3 rounded-2xl bg-hacker-cyan/10 border border-hacker-cyan/20 mb-6 backdrop-blur-md">
             <MessageSquare className="w-6 h-6 text-hacker-cyan" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white">
+          <h2 className="text-4xl md:text-6xl font-black tracking-[0.05em] text-white font-orbitron uppercase text-pop">
             Support <span className="text-gradient">Center</span>
           </h2>
-          <p className="text-white/40 mt-4 text-lg max-w-2xl">
+          <p className="text-white/40 mt-4 text-lg max-w-2xl font-space">
             Everything you need to know about the Galgotias Programming League.
           </p>
         </div>
@@ -61,7 +61,7 @@ const FAQ: React.FC = () => {
                 className="w-full p-8 flex justify-between items-center gap-6 text-left"
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
               >
-                <h3 className="text-xl font-bold text-white/90 group-hover:text-hacker-cyan transition-colors">{faq.q}</h3>
+                <h3 className="text-xl font-bold text-white/90 group-hover:text-hacker-cyan transition-colors font-orbitron uppercase tracking-wider">{faq.q}</h3>
                 <div className={`p-2 rounded-full transition-all duration-300 ${openIdx === idx ? 'bg-hacker-cyan text-black rotate-180' : 'bg-white/5 text-hacker-cyan group-hover:bg-hacker-cyan/20'}`}>
                   <ChevronDown className="w-5 h-5" />
                 </div>
@@ -74,7 +74,7 @@ const FAQ: React.FC = () => {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    <div className="px-8 pb-8 text-white/50 text-lg leading-relaxed border-t border-white/5 pt-6">
+                    <div className="px-8 pb-8 text-white/50 text-lg leading-relaxed border-t border-white/5 pt-6 font-space">
                       {faq.a}
                     </div>
                   </Motion.div>

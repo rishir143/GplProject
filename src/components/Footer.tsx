@@ -11,11 +11,11 @@ const Footer: React.FC = () => {
             <div className="p-2 rounded-xl bg-hacker-cyan/10 border border-hacker-cyan/20">
               <img src={logo} alt="LOOP Logo" className="h-8 w-8 object-contain" />
             </div>
-            <span className="text-2xl font-black tracking-tighter text-white">
+            <span className="text-2xl font-black tracking-tighter text-white font-orbitron">
               GPL <span className="text-hacker-cyan text-glow">1.0</span>
             </span>
           </div>
-          <p className="text-white/40 text-sm leading-relaxed mb-8 font-medium">
+          <p className="text-white/40 text-sm leading-relaxed mb-8 font-medium font-space">
             The flagship competitive programming league of Galgotias University, organized by Club LOOP.
           </p>
           <div className="flex gap-4">
@@ -32,8 +32,8 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="md:col-span-1">
-          <h4 className="text-white font-bold mb-8 text-xs uppercase tracking-[0.2em]">Navigation</h4>
-          <ul className="space-y-4 text-sm text-white/40 font-medium">
+          <h4 className="text-white font-bold mb-8 text-xs uppercase tracking-[0.2em] font-orbitron">Navigation</h4>
+          <ul className="space-y-4 text-sm text-white/40 font-medium font-space">
             {['About', 'Structure', 'Timeline', 'Prizes', 'FAQ'].map((item) => (
               <li key={item}>
                 <a href={`#${item.toLowerCase()}`} className="hover:text-hacker-cyan hover:translate-x-1 inline-block transition-all duration-300">
@@ -45,8 +45,8 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="md:col-span-1">
-          <h4 className="text-white font-bold mb-8 text-xs uppercase tracking-[0.2em]">Resources</h4>
-          <ul className="space-y-4 text-sm text-white/40 font-medium">
+          <h4 className="text-white font-bold mb-8 text-xs uppercase tracking-[0.2em] font-orbitron">Resources</h4>
+          <ul className="space-y-4 text-sm text-white/40 font-medium font-space">
             {['Rules & Regulations', 'Platform Guide', 'Previous Problems', 'Sponsorships'].map((item) => (
               <li key={item}>
                 <a href="#" className="hover:text-hacker-cyan hover:translate-x-1 inline-block transition-all duration-300">
@@ -58,8 +58,8 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="md:col-span-1">
-          <h4 className="text-white font-bold mb-8 text-xs uppercase tracking-[0.2em]">Contact</h4>
-          <ul className="space-y-6 text-sm text-white/40 font-medium">
+          <h4 className="text-white font-bold mb-8 text-xs uppercase tracking-[0.2em] font-orbitron">Contact</h4>
+          <ul className="space-y-6 text-sm text-white/40 font-medium font-space">
             <li className="flex items-center gap-4 group cursor-pointer">
               <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-hacker-cyan group-hover:bg-hacker-cyan/10 group-hover:border-hacker-cyan/30 transition-all">
                 <Mail className="w-4 h-4" />
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+      <div className="container mx-auto px-6 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 font-space">
         <p className="text-[10px] text-white/20 font-mono tracking-widest uppercase">
           &copy; 2026 GPL 1.0. ALL RIGHTS RESERVED. DESIGNED BY <span className="text-hacker-cyan font-bold">CLUB LOOP</span>.
         </p>
