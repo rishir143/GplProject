@@ -1,6 +1,6 @@
 import React from "react";
 import { motion as Motion } from "framer-motion";
-import { Terminal, ShieldCheck } from "lucide-react";
+import { Terminal, ShieldCheck, Code2 } from "lucide-react";
 
 const EventStructure: React.FC = () => {
   return (
@@ -13,10 +13,10 @@ const EventStructure: React.FC = () => {
             viewport={{ once: true }}
             className="p-3 rounded-2xl bg-hacker-cyan/10 border border-hacker-cyan/20 mb-6 backdrop-blur-md"
           >
-            <Terminal className="w-6 h-6 text-hacker-cyan" />
+            <Code2 className="w-6 h-6 text-hacker-cyan" />
           </Motion.div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-[0.05em] text-white font-orbitron uppercase text-pop">
-            Event <span className="text-gradient">Roadmap</span>
+          <h2 className="text-4xl md:text-6xl font-black tracking-[0.1em] text-white font-orbitron text-pop">
+            Event <span className="text-heading-premium">Roadmap</span>
           </h2>
           <p className="text-white/40 mt-4 text-lg max-w-2xl font-space">
             The competition is divided into two intense phases designed to filter the best of the best.

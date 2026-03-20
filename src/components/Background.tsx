@@ -10,11 +10,22 @@ declare global {
 const Background: React.FC = () => {
   const vantaRef = useRef<HTMLDivElement>(null);
   const [vantaEffect, setVantaEffect] = useState<any>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({
+        x: (e.clientX / window.innerWidth) * 100,
+        y: (e.clientY / window.innerHeight) * 100,
+      });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   useEffect(() => {
     const loadVanta = () => {
       if (!vantaEffect && window.VANTA && vantaRef.current) {
-        // Using NET effect which feels like a mix of particles and connectivity
         setVantaEffect(
           window.VANTA.NET({
             el: vantaRef.current,
@@ -25,11 +36,11 @@ const Background: React.FC = () => {
             minWidth: 200.0,
             scale: 1.0,
             scaleMobile: 1.0,
-            color: 0x00c2ff, // Neon cyan
-            backgroundColor: 0x08141f, // Deep navy
-            points: 10.0,
-            maxDistance: 20.0,
-            spacing: 15.0,
+            color: 0x00c2ff,
+            backgroundColor: 0x08141f,
+            points: 12.0,
+            maxDistance: 22.0,
+            spacing: 16.0,
             showDots: true
           })
         );
@@ -41,7 +52,6 @@ const Background: React.FC = () => {
       threeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js';
       threeScript.onload = () => {
         const vantaScript = document.createElement('script');
-        // Loading NET effect as it matches the premium tech feel better
         vantaScript.src = 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js';
         vantaScript.onload = loadVanta;
         document.head.appendChild(vantaScript);
@@ -57,12 +67,25 @@ const Background: React.FC = () => {
   }, [vantaEffect]);
 
   return (
-    <div className="fixed inset-0 -z-10 bg-deep-gradient">
-      <div ref={vantaRef} className="absolute inset-0" />
-      {/* Semi-transparent dark overlay with slight backdrop blur */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px] pointer-events-none" />
-      {/* Bottom gradient for smooth transition */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-hacker-dark pointer-events-none" />
+    <div className="fixed inset-0 -z-10 bg-[#08141f]">
+      <div ref={vantaRef} className="absolute inset-0 opacity-40" />
+      
+      {/* Dynamic Mouse-Following Glow */}
+      <div 
+        className="absolute w-[800px] h-[800px] bg-hacker-cyan/10 blur-[150px] rounded-full pointer-events-none transition-all duration-700 ease-out"
+        style={{
+          left: `${mousePos.x}%`,
+          top: `${mousePos.y}%`,
+          transform: 'translate(-50%, -50%)',
+        }}
+      />
+
+      {/* Static Depth Gradients */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0d2434] via-transparent to-[#08141f] opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(8,20,31,0.8)_100%)] pointer-events-none" />
+      
+      {/* Semi-transparent dark overlay with backdrop blur */}
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px] pointer-events-none" />
     </div>
   );
 };

@@ -30,21 +30,29 @@ const Prizes: React.FC = () => {
   return (
     <section id="prizes" className="py-32 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-24">
+        <div className="flex flex-col items-center text-center mb-24">
+          <Motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="p-3 rounded-2xl bg-hacker-cyan/10 border border-hacker-cyan/20 mb-6 backdrop-blur-md"
+          >
+            <Trophy className="w-6 h-6 text-hacker-cyan" />
+          </Motion.div>
           <Motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black mb-6 tracking-[0.05em] font-orbitron uppercase text-pop"
+            className="text-4xl md:text-6xl font-black mb-6 tracking-[0.1em] font-orbitron text-pop"
           >
-            Prize <span className="text-hacker-cyan text-glow-neon">Pool</span>
+            Prize <span className="text-heading-premium">Pool</span>
           </Motion.h2>
           <Motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-white/50 max-w-2xl mx-auto text-lg font-space"
+            className="text-white/40 text-lg max-w-2xl font-space"
           >
             Total rewards exceeding ₹ 50,000+ for the top performers of GPL 1.0.
           </Motion.p>

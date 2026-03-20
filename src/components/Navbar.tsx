@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
             <img src={logo} alt="LOOP Logo" className="h-8 w-8 object-contain" />
           </div>
           <span className="text-2xl font-black tracking-tighter text-white font-orbitron">
-            GPL <span className="text-hacker-cyan text-glow">1.0</span>
+            GPL <span className="text-hacker-cyan text-glow-little">1.0</span>
           </span>
         </div>
 

@@ -19,9 +19,9 @@ const About: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black mb-8 tracking-[0.05em] font-orbitron uppercase text-pop"
+            className="text-4xl md:text-6xl font-black mb-8 tracking-[0.1em] font-orbitron text-pop"
           >
-            The Ultimate <span className="text-gradient">Battleground</span>
+            The Ultimate <span className="text-heading-premium">Battleground</span>
           </Motion.h2>
           <Motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -38,24 +38,24 @@ const About: React.FC = () => {
 
         <div className="grid md:grid-cols-4 gap-8">
           {[
-            { icon: <Code2 />, title: "Pure Coding", desc: "Algorithmic challenges that test your core logic." },
-            { icon: <Trophy />, title: "Huge Prizes", desc: "Win rewards for your technical excellence." },
-            { icon: <Cpu />, title: "Tech Vibe", desc: "Immerse yourself in a futuristic hacker environment." },
-            { icon: <Zap />, title: "Fast Paced", desc: "Race against time to solve complex problems." },
+            { icon: Code2, title: "Pure Coding", desc: "Algorithmic challenges that test your core logic." },
+            { icon: Trophy, title: "Huge Prizes", desc: "Win rewards for your technical excellence." },
+            { icon: Cpu, title: "Tech Vibe", desc: "Immerse yourself in a futuristic hacker environment." },
+            { icon: Zap, title: "Fast Paced", desc: "Race against time to solve complex problems." },
           ].map((item, idx) => (
             <Motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 * idx }}
+              transition={{ delay: 0.1 * idx, duration: 0.8 }}
               className="glass-card p-10 group"
             >
-              <div className="w-14 h-14 bg-hacker-cyan/10 rounded-2xl flex items-center justify-center text-hacker-cyan mb-8 border border-hacker-cyan/20 group-hover:bg-hacker-cyan group-hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(0,194,255,0.1)] group-hover:shadow-[0_0_30px_rgba(0,194,255,0.3)]">
-                {item.icon}
+              <div className="w-16 h-16 bg-hacker-cyan/10 rounded-2xl flex items-center justify-center text-hacker-cyan mb-8 border border-hacker-cyan/20 group-hover:bg-hacker-cyan group-hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(0,194,255,0.1)] group-hover:shadow-[0_0_30px_rgba(0,194,255,0.4)]">
+                <item.icon className="w-8 h-8 filter drop-shadow-[0_0_8px_rgba(0,194,255,0.6)]" />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-hacker-cyan transition-colors font-orbitron uppercase tracking-wider">{item.title}</h3>
-              <p className="text-white/40 leading-relaxed text-sm font-space">{item.desc}</p>
+              <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-hacker-cyan transition-colors font-orbitron uppercase tracking-wider">{item.title}</h3>
+              <p className="text-white/40 leading-relaxed text-sm font-space group-hover:text-white/70 transition-colors">{item.desc}</p>
             </Motion.div>
           ))}
         </div>
