@@ -24,6 +24,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.text-1-0-premium {
+  background: linear-gradient(135deg, #0082ff 0%, #00c2ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 12px rgba(0, 194, 255, 0.5));
+  font-weight: 900;
+}
+
 .text-heading-premium {
   background: linear-gradient(to bottom, #ffffff 0%, #00c2ff 50%, #ffffff 100%);
   -webkit-background-clip: text;
@@ -41,7 +50,7 @@ body {
 }
 
 .text-pop {
-  text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.9);
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .text-gradient-cyan {

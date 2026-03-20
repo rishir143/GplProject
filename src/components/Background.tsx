@@ -9,6 +9,7 @@ declare global {
 
 const Background: React.FC = () => {
   const vantaRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [vantaEffect, setVantaEffect] = useState<any>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -22,6 +23,102 @@ const Background: React.FC = () => {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
+
+  // Particles Effect
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animationFrameId: number;
+    let particles: Particle[] = [];
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 40 : 100;
+
+    class Particle {
+      x: number;
+      y: number;
+      size: number;
+      speedX: number;
+      speedY: number;
+      opacity: number;
+
+      constructor() {
+        this.x = Math.random() * canvas!.width;
+        this.y = Math.random() * canvas!.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+        this.opacity = Math.random() * 0.5 + 0.1;
+      }
+
+      update(mouseX: number, mouseY: number) {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x > canvas!.width) this.x = 0;
+        else if (this.x < 0) this.x = canvas!.width;
+        if (this.y > canvas!.height) this.y = 0;
+        else if (this.y < 0) this.y = canvas!.height;
+
+        // Mouse interaction (slight repel)
+        const dx = mouseX - this.x;
+        const dy = mouseY - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < 100) {
+          const forceDirectionX = dx / distance;
+          const forceDirectionY = dy / distance;
+          const force = (100 - distance) / 100;
+          this.x -= forceDirectionX * force * 2;
+          this.y -= forceDirectionY * force * 2;
+        }
+      }
+
+      draw() {
+        if (!ctx) return;
+        ctx.fillStyle = `rgba(0, 194, 255, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    const init = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      particles = [];
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+    };
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const actualMouseX = (mousePos.x / 100) * canvas.width;
+      const actualMouseY = (mousePos.y / 100) * canvas.height;
+      
+      particles.forEach(particle => {
+        particle.update(actualMouseX, actualMouseY);
+        particle.draw();
+      });
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    init();
+    animate();
+
+    const handleResize = () => {
+      init();
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [mousePos]);
 
   useEffect(() => {
     const loadVanta = () => {
@@ -70,9 +167,14 @@ const Background: React.FC = () => {
     <div className="fixed inset-0 -z-10 bg-[#08141f]">
       <div ref={vantaRef} className="absolute inset-0 opacity-40" />
       
+      <canvas 
+        ref={canvasRef} 
+        className="absolute inset-0 pointer-events-none opacity-30"
+      />
+
       {/* Dynamic Mouse-Following Glow */}
       <div 
-        className="absolute w-[800px] h-[800px] bg-hacker-cyan/10 blur-[150px] rounded-full pointer-events-none transition-all duration-700 ease-out"
+        className="absolute w-[600px] h-[600px] bg-hacker-cyan/5 blur-[120px] rounded-full pointer-events-none transition-all duration-1000 ease-out"
         style={{
           left: `${mousePos.x}%`,
           top: `${mousePos.y}%`,

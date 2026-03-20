@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
               <img src={logo} alt="LOOP Logo" className="h-8 w-8 object-contain" />
             </div>
             <span className="text-2xl font-black tracking-tighter text-white font-orbitron">
-              GPL <span className="text-hacker-cyan text-glow-little">1.0</span>
+              GPL <span className="text-1-0-premium">1.0</span>
             </span>
           </div>
           <p className="text-white/40 text-sm leading-relaxed mb-8 font-medium font-space">

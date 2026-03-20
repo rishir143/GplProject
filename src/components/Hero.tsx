@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-hacker-cyan/10 blur-[120px] rounded-full -z-10" />
             <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px] -z-10 rounded-3xl scale-110" />
             <h1 className="text-7xl md:text-[10rem] font-black leading-[0.9] tracking-[-0.04em] text-white font-orbitron text-pop">
-              GPL <span className="text-gradient-cyan text-glow-neon-sharp">1.0</span>
+              GPL <span className="text-1-0-premium">1.0</span>
             </h1>
           </div>
           
