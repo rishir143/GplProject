@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/hero.png';
 
@@ -37,12 +38,12 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-6 xl:gap-10">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-bold uppercase tracking-[0.2em] text-white/50 hover:text-hacker-cyan transition-all duration-300 relative group font-orbitron"
+              className="text-xs xl:text-sm font-bold uppercase tracking-[0.2em] text-white/50 hover:text-hacker-cyan transition-all duration-300 relative group font-orbitron"
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-hacker-cyan transition-all duration-300 group-hover:w-full" />
@@ -52,7 +53,7 @@ const Navbar: React.FC = () => {
             href="https://unstop.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 bg-hacker-cyan text-black text-xs font-black uppercase tracking-[0.2em] rounded-xl btn-glow hover:scale-105 active:scale-95 transition-all font-orbitron"
+            className="px-6 xl:px-8 py-2.5 xl:py-3 bg-hacker-cyan text-black text-[10px] xl:text-xs font-black uppercase tracking-[0.2em] rounded-xl btn-glow hover:scale-105 active:scale-95 transition-all font-orbitron"
           >
             Register Now
           </a>
@@ -60,7 +61,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-white"
+          className="lg:hidden text-white p-2 rounded-lg bg-white/5 border border-white/10"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X /> : <Menu />}
@@ -68,31 +69,38 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-hacker-dark/95 backdrop-blur-xl border-b border-white/10 py-6 px-6">
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <Motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden absolute top-full left-0 w-full bg-hacker-dark/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
+          >
+            <div className="flex flex-col gap-6 py-8 px-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-lg font-bold uppercase tracking-[0.2em] text-white/70 hover:text-hacker-cyan transition-colors font-orbitron"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
               <a
-                key={link.name}
-                href={link.href}
-                className="text-lg font-medium text-white/70 hover:text-hacker-cyan"
+                href="https://unstop.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-center py-4 bg-hacker-cyan text-black font-black uppercase tracking-[0.2em] rounded-xl btn-glow font-orbitron text-sm"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                {link.name}
+                Register Now
               </a>
-            ))}
-            <a
-              href="https://unstop.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full text-center py-3 bg-hacker-cyan text-black font-bold rounded-lg btn-glow"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Register Now
-            </a>
-          </div>
-        </div>
-      )}
+            </div>
+          </Motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

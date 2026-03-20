@@ -49,13 +49,13 @@ const About: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 * idx, duration: 0.8 }}
-              className="glass-card p-6 md:p-10 group"
+              className="glass-card p-5 md:p-10 group"
             >
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-hacker-cyan/10 rounded-2xl flex items-center justify-center text-hacker-cyan mb-6 md:mb-8 border border-hacker-cyan/20 group-hover:bg-hacker-cyan group-hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(0,194,255,0.1)] group-hover:shadow-[0_0_30px_rgba(0,194,255,0.4)]">
-                <item.icon className="w-6 h-6 md:w-8 md:h-8 filter drop-shadow-[0_0_8px_rgba(0,194,255,0.6)]" />
+              <div className="w-10 h-10 md:w-16 md:h-16 bg-hacker-cyan/10 rounded-xl md:rounded-2xl flex items-center justify-center text-hacker-cyan mb-5 md:mb-8 border border-hacker-cyan/20 group-hover:bg-hacker-cyan group-hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(0,194,255,0.1)] group-hover:shadow-[0_0_30px_rgba(0,194,255,0.4)]">
+                <item.icon className="w-5 h-5 md:w-8 md:h-8 filter drop-shadow-[0_0_8px_rgba(0,194,255,0.6)]" />
               </div>
-              <h3 className="text-lg md:text-2xl font-bold mb-3 md:mb-4 text-white group-hover:text-hacker-cyan transition-colors font-orbitron uppercase tracking-wider">{item.title}</h3>
-              <p className="text-white/40 leading-relaxed text-xs md:text-sm font-space group-hover:text-white/70 transition-colors">{item.desc}</p>
+              <h3 className="text-base md:text-2xl font-bold mb-2 md:mb-4 text-white group-hover:text-hacker-cyan transition-colors font-orbitron uppercase tracking-wider">{item.title}</h3>
+              <p className="text-white/40 leading-relaxed text-[10px] md:text-sm font-space group-hover:text-white/70 transition-colors">{item.desc}</p>
             </Motion.div>
           ))}
         </div>

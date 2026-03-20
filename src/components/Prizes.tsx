@@ -5,25 +5,28 @@ import { Trophy, Award, Medal } from 'lucide-react';
 const Prizes: React.FC = () => {
   const prizePool = [
     {
+      place: '1st Place',
+      amount: '₹ 25,000',
+      icon: Trophy,
+      color: 'border-hacker-cyan/30 shadow-hacker-cyan/10 md:scale-110 z-10',
+      delay: 0,
+      order: 'order-1 lg:order-2'
+    },
+    {
       place: '2nd Place',
       amount: '₹ 15,000',
       icon: Award,
       color: 'border-white/10 shadow-white/5',
-      delay: 0.1
-    },
-    {
-      place: '1st Place',
-      amount: '₹ 25,000',
-      icon: Trophy,
-      color: 'border-hacker-cyan/30 shadow-hacker-cyan/10 scale-110 z-10',
-      delay: 0
+      delay: 0.1,
+      order: 'order-2 lg:order-1'
     },
     {
       place: '3rd Place',
       amount: '₹ 10,000',
       icon: Medal,
       color: 'border-white/10 shadow-white/5',
-      delay: 0.2
+      delay: 0.2,
+      order: 'order-3 lg:order-3'
     }
   ];
 
@@ -58,7 +61,7 @@ const Prizes: React.FC = () => {
           </Motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center md:items-end">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-center lg:items-end">
           {prizePool.map((prize, idx) => (
             <Motion.div
               key={idx}
@@ -66,15 +69,15 @@ const Prizes: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: prize.delay, duration: 0.6 }}
-              className={`glass-card p-8 md:p-10 text-center flex flex-col items-center border ${prize.color} group ${idx === 1 ? 'md:scale-110 z-10' : ''}`}
+              className={`glass-card p-6 md:p-10 text-center flex flex-col items-center border ${prize.color} group ${prize.order}`}
             >
-              <div className="mb-6 md:mb-8 p-3 md:p-4 rounded-2xl bg-hacker-cyan/10 text-hacker-cyan group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_rgba(0,194,255,0.1)] group-hover:shadow-[0_0_30px_rgba(0,194,255,0.4)]">
-                <prize.icon className="w-8 h-8 md:w-12 md:h-12 filter drop-shadow-[0_0_8px_rgba(0,194,255,0.6)]" />
+              <div className="mb-5 md:mb-8 p-3 md:p-4 rounded-xl md:rounded-2xl bg-hacker-cyan/10 text-hacker-cyan group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_rgba(0,194,255,0.1)] group-hover:shadow-[0_0_30px_rgba(0,194,255,0.4)]">
+                <prize.icon className="w-6 h-6 md:w-12 md:h-12 filter drop-shadow-[0_0_8px_rgba(0,194,255,0.6)]" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-white/70 mb-1 md:mb-2 uppercase tracking-[0.2em] font-orbitron">{prize.place}</h3>
-              <p className="text-3xl md:text-4xl font-black text-white text-glow mb-6 md:mb-8 font-orbitron">{prize.amount}</p>
-              <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-hacker-cyan/20 to-transparent mb-6 md:mb-8" />
-              <ul className="text-xs md:text-sm text-white/40 space-y-3 md:space-y-4 font-space text-left w-full">
+              <h3 className="text-base md:text-xl font-bold text-white/70 mb-1 md:mb-2 uppercase tracking-[0.2em] font-orbitron">{prize.place}</h3>
+              <p className="text-2xl md:text-4xl font-black text-white text-glow mb-5 md:mb-8 font-orbitron">{prize.amount}</p>
+              <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-hacker-cyan/20 to-transparent mb-5 md:mb-8" />
+              <ul className="text-[10px] md:text-sm text-white/40 space-y-2 md:space-y-4 font-space text-left w-full">
                 <li className="flex items-center gap-3 uppercase tracking-widest font-bold">
                   <span className="w-1.5 h-1.5 rounded-full bg-hacker-cyan shadow-[0_0_8px_rgba(0,194,255,0.8)]" />
                   Exclusive SWAGs

@@ -76,10 +76,10 @@ const Hero: React.FC = () => {
               href="https://unstop.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-10 py-5 lg:px-20 lg:py-8 bg-hacker-cyan text-black font-black text-xl lg:text-2xl rounded-2xl btn-glow-premium animate-pulse-glow-subtle flex items-center justify-center gap-4 overflow-hidden font-orbitron"
+              className="group relative px-8 py-4 md:px-12 md:py-5 lg:px-20 lg:py-8 bg-hacker-cyan text-black font-black text-lg md:text-xl lg:text-2xl rounded-2xl btn-glow-premium animate-pulse-glow-subtle flex items-center justify-center gap-4 overflow-hidden font-orbitron"
             >
               <span className="relative z-10 uppercase tracking-widest">Secure Your Spot</span>
-              <ChevronRight className="relative z-10 w-6 h-6 lg:w-8 lg:h-8 group-hover:translate-x-2 transition-transform duration-300" />
+              <ChevronRight className="relative z-10 w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 group-hover:translate-x-2 transition-transform duration-300" />
               <div className="absolute inset-0 bg-white/40 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
             </a>
             <p className="text-xs text-white/50 uppercase tracking-[0.6em] font-black font-orbitron text-pop brightness-125">
