@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Twitter, Linkedin, Mail, Instagram } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, Instagram, MessageSquare } from 'lucide-react';
 import logo from '../assets/hero.png';
 
 const Footer: React.FC = () => {
@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
             The flagship competitive programming league of Galgotias University, organized by Club LOOP.
           </p>
           <div className="flex gap-4">
-            {[Github, Twitter, Linkedin, Instagram].map((Icon, idx) => (
+            {[Github, Twitter, Linkedin, Instagram, MessageSquare].map((Icon, idx) => (
               <a 
                 key={idx} 
                 href="#" 

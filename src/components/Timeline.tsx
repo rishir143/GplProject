@@ -5,30 +5,25 @@ import { Clock } from 'lucide-react';
 const Timeline: React.FC = () => {
   const events = [
     {
-      date: 'April 1 - 3',
-      title: 'Registration Period',
-      desc: 'Sign up on Unstop to secure your spot in the league. Limited entries available.',
+      date: '1 - 3 April',
+      title: 'Registration Phase',
+      desc: 'Sign up on Unstop and secure your spot for the qualifier round.'
     },
     {
-      date: 'April 4',
-      title: 'Mock Contest',
-      desc: 'Get familiar with the platform and testing environment. Not scored.',
+      date: '5 April',
+      title: 'The Qualifier',
+      desc: 'Online algorithmic battle to select the top 50 finalists.'
     },
     {
-      date: 'April 5 | 10:00 AM',
-      title: 'GPL 1.0 Qualifier',
-      desc: 'The online battle begins. 2 hours of algorithmic challenges.',
-    },
-    {
-      date: 'April 5 | 03:00 PM',
+      date: '7 April',
       title: 'Finalists Announcement',
-      desc: 'The top 50 participants who qualify for the grand finale are announced.',
+      desc: 'Official list of selected participants for the grand finale.'
     },
     {
-      date: 'April 10',
-      title: 'Grand Finale & Ceremony',
-      desc: 'The offline showdown at Galgotias Campus, followed by the prize ceremony.',
-    },
+      date: '15 April',
+      title: 'Grand Finale',
+      desc: 'Offline showdown at Galgotias University campus.'
+    }
   ];
 
   return (

@@ -7,34 +7,26 @@ const FAQ: React.FC = () => {
 
   const faqs = [
     {
-      q: "Who can participate in GPL 1.0?",
-      a: "GPL 1.0 is open to all college students. Whether you're a beginner or an expert, we have challenges for everyone."
+      q: 'Who can participate in GPL 1.0?',
+      a: 'The league is open to all students of Galgotias University across all branches and years. Whether you are a beginner or an expert, you are welcome!'
     },
     {
-      q: "What programming languages are supported?",
-      a: "All major languages supported by Codeforces/HackerRank, including C++, Java, Python, and JavaScript."
+      q: 'What is the registration fee?',
+      a: 'Registration for GPL 1.0 is completely free of charge for all eligible students.'
     },
     {
-      q: "Is it a solo or team-based competition?",
-      a: "GPL 1.0 is a solo participant competition. It's an individual battle for the top spot."
+      q: 'Which programming languages are supported?',
+      a: 'All major languages supported by standard competitive programming platforms, including C++, Java, Python, and JavaScript.'
     },
     {
-      q: "What is the platform for the online round?",
-      a: "The online qualifier will be hosted on a standard competitive programming platform (e.g., Codeforces/HackerRank). Links will be shared before the event."
-    },
-    {
-      q: "Will there be registration fees?",
-      a: "Registration is completely free for the online qualifier. For the grand finale, there may be a nominal entry fee."
-    },
-    {
-      q: "Are there rules against plagiarism?",
-      a: "Absolutely. We use advanced plagiarism detection tools. Any form of cheating will result in immediate disqualification."
+      q: 'Will there be SWAGs for all finalists?',
+      a: 'Yes, every participant who qualifies for and attends the Grand Finale will receive an exclusive GPL 1.0 swag kit.'
     }
   ];
 
   return (
     <section id="faq" className="py-32 relative overflow-hidden">
-      <div className="container mx-auto px-6 max-w-4xl">
+      <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-20">
           <Motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -52,7 +44,7 @@ const FAQ: React.FC = () => {
           </p>
         </div>
         
-        <div className="space-y-4">
+        <div className="max-w-4xl mx-auto space-y-4">
           {faqs.map((faq, idx) => (
             <Motion.div
               key={idx}

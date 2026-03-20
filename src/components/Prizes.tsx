@@ -7,21 +7,21 @@ const Prizes: React.FC = () => {
     {
       place: '2nd Place',
       amount: '₹ 15,000',
-      icon: <Award className="w-12 h-12" />,
+      icon: Award,
       color: 'border-white/10 shadow-white/5',
       delay: 0.1
     },
     {
       place: '1st Place',
       amount: '₹ 25,000',
-      icon: <Trophy className="w-16 h-16" />,
+      icon: Trophy,
       color: 'border-hacker-cyan/30 shadow-hacker-cyan/10 scale-110 z-10',
       delay: 0
     },
     {
       place: '3rd Place',
       amount: '₹ 10,000',
-      icon: <Medal className="w-12 h-12" />,
+      icon: Medal,
       color: 'border-white/10 shadow-white/5',
       delay: 0.2
     }
@@ -68,8 +68,8 @@ const Prizes: React.FC = () => {
               transition={{ delay: prize.delay, duration: 0.6 }}
               className={`glass-card p-10 text-center flex flex-col items-center border ${prize.color} group`}
             >
-              <div className="mb-8 p-4 rounded-2xl bg-hacker-cyan/10 text-hacker-cyan group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_rgba(0,194,255,0.1)] group-hover:shadow-[0_0_30px_rgba(0,194,255,0.3)]">
-                {prize.icon}
+              <div className="mb-8 p-4 rounded-2xl bg-hacker-cyan/10 text-hacker-cyan group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_rgba(0,194,255,0.1)] group-hover:shadow-[0_0_30px_rgba(0,194,255,0.4)]">
+                <prize.icon className="w-12 h-12 filter drop-shadow-[0_0_8px_rgba(0,194,255,0.6)]" />
               </div>
               <h3 className="text-xl font-bold text-white/70 mb-2 uppercase tracking-[0.2em] font-orbitron">{prize.place}</h3>
               <p className="text-4xl font-black text-white text-glow mb-8 font-orbitron">{prize.amount}</p>

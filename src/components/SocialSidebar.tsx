@@ -13,7 +13,7 @@ const SocialSidebar: React.FC = () => {
   return (
     <>
       {/* Left Sidebar - Social Icons */}
-      <div className="fixed left-4 md:left-6 top-1/2 -translate-y-1/2 z-[100]">
+      <div className="fixed left-4 md:left-6 top-1/2 -translate-y-1/2 z-[100] hidden md:block">
         <Motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -39,7 +39,7 @@ const SocialSidebar: React.FC = () => {
       </div>
 
       {/* Right Sidebar - Vertical Email (Matching reference image) */}
-      <div className="fixed right-4 md:right-6 top-1/2 -translate-y-1/2 z-[100]">
+      <div className="fixed right-4 md:right-6 top-1/2 -translate-y-1/2 z-[100] hidden md:block">
         <Motion.div 
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
