@@ -60,6 +60,16 @@ body {
   background-clip: text;
 }
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 .glass-card {
   background: rgba(13, 36, 52, 0.4);
   backdrop-filter: blur(12px) saturate(180%);
