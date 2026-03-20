@@ -2,25 +2,33 @@ import React from 'react';
 import { motion as Motion } from 'framer-motion';
 import { Code2, Trophy, Cpu, Zap } from 'lucide-react';
 
-const About = () => {
+const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
+    <section id="about" className="py-32 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center mb-24">
+          <Motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-block p-3 rounded-2xl bg-hacker-cyan/10 border border-hacker-cyan/20 mb-8 backdrop-blur-md"
+          >
+            <Cpu className="w-6 h-6 text-hacker-cyan" />
+          </Motion.div>
           <Motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-8"
+            className="text-4xl md:text-6xl font-black mb-8 tracking-tighter"
           >
-            About <span className="text-hacker-green">GPL 1.0</span>
+            The Ultimate <span className="text-gradient">Battleground</span>
           </Motion.h2>
           <Motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-white/70 leading-relaxed mb-16"
+            className="text-xl text-white/60 leading-relaxed"
           >
             The Galgotias Programming League is more than just a contest; it's a battleground for the sharpest minds. 
             Join hundreds of developers in a high-octane environment where logic meets creativity. 
@@ -41,13 +49,13 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 * idx }}
-              className="glass-card p-8 group hover:border-hacker-green/40 transition-all"
+              className="glass-card p-10 group"
             >
-              <div className="w-12 h-12 bg-hacker-green/10 rounded-lg flex items-center justify-center text-hacker-green mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-14 h-14 bg-hacker-cyan/10 rounded-2xl flex items-center justify-center text-hacker-cyan mb-8 border border-hacker-cyan/20 group-hover:bg-hacker-cyan group-hover:text-black transition-all duration-500 shadow-[0_0_20px_rgba(0,194,255,0.1)] group-hover:shadow-[0_0_30px_rgba(0,194,255,0.3)]">
                 {item.icon}
               </div>
-              <h3 className="text-xl font-bold mb-2 text-white">{item.title}</h3>
-              <p className="text-sm text-white/50">{item.desc}</p>
+              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-hacker-cyan transition-colors">{item.title}</h3>
+              <p className="text-white/40 leading-relaxed text-sm">{item.desc}</p>
             </Motion.div>
           ))}
         </div>
